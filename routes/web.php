@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,13 @@ Route::prefix('admin')->group(function () {
     Route::any('/', [AdminController::class, 'index']);
 });
 
+Route::group(
+    ['middleware' => 'auth.jwt'],
+    function(){
+        // Route::any('/dashboard', [AdminController::class, 'dashboard']);
+    }
+);
+
 Route::any('/dashboard', [AdminController::class, 'dashboard']);
 
 Route::any('/employee/{id}/{action}', [AdminController::class, 'employee']);
@@ -39,3 +47,23 @@ Route::any('/departmentadd', [AdminController::class, 'departmentadd']);
 // Route::any('/employee/delete/{id}', [AdminController::class, 'delete']);
 
 Route::any('/logout', [AdminController::class, 'logout']);
+
+Route::get('queue-email', function(){
+  
+    $email_list['email'] = 'hafiyb@gmail.com';
+  
+    dispatch(new \App\Jobs\QueueJob($email_list));
+  
+    return response()->json($email_list['email']);
+    // dd('Send Email Successfully');
+});
+
+Route::get('create-user', function(){
+    $user = new User();
+    $user->name = 'hafiy';
+    $user->email = 'test@testmail.com';
+    $user->password = bcrypt('password');
+    $user->role = rand(1,9);
+
+    $user->save();
+});

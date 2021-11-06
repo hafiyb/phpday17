@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Job;
+use App\Models\EmployeeJob;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
@@ -21,7 +21,7 @@ class JobSeeder extends Seeder
 
         foreach (range(1,10) as $index){
             $count++;
-            $job = new Job();
+            $job = new EmployeeJob();
             $job->title = $faker->name;
             $job->description = $faker->name;
             $job->min_salary = rand(1000,9999);

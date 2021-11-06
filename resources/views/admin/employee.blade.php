@@ -15,7 +15,7 @@
 
     <!-- Custom fonts for this template-->
 
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -65,8 +65,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/employee/0/0" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="/employee/0/0">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Employee</span>
                 </a>
@@ -81,8 +80,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/job/0/0" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/job/0/0">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Jobs</span>
                 </a>
@@ -99,8 +97,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/department/0/0" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/department/0/0">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Departments</span>
                 </a>
@@ -397,7 +394,7 @@
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
                     </div>
 
-                    <table class="table">
+                    {{-- <table class="table">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -417,6 +414,35 @@
                                     <td>{{ $employee->email}}</td>
                                     <td>{{ $employee->phone_number}}</td>
                                     <td>{{ $employee->salary}}</td>
+                                    <td>
+                                        <a href="{{url("/employeeedit/{$employee->id}")}}">Edit  </a>
+                                        <a href="{{url("/employee/{$employee->id}/2")}}">  Delete</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                                
+                            @endisset
+                        </tbody>
+                    </table> --}}
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @isset($employees)
+                                @foreach ($employees as $employee)
+                                <tr>
+                                    <td>{{ $employee->id }}</td>
+                                    <td>{{ $employee->name}}</td>
+                                    <td>{{ $employee->email}}</td>
+                                    <td>{{ $employee->role}}</td>
                                     <td>
                                         <a href="{{url("/employeeedit/{$employee->id}")}}">Edit  </a>
                                         <a href="{{url("/employee/{$employee->id}/2")}}">  Delete</a>
@@ -802,21 +828,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

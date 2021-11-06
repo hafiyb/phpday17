@@ -15,7 +15,7 @@
 
     <!-- Custom fonts for this template-->
 
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -65,8 +65,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/employee/0/0" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="/employee/0/0">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Employee</span>
                 </a>
@@ -81,8 +80,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/job/0/0" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/job/0/0">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Jobs</span>
                 </a>
@@ -99,8 +97,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/department/0/0" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/department/0/0">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Departments</span>
                 </a>
@@ -398,22 +395,14 @@
                     </div>
                     <form action="" method="post">
                         @csrf
-                        <h6>User ID</h6><br>
-                        <input type="text" required name="user_id" ><br><br>
-                        <h6>First Name</h6><br>
-                        <input type="text" required name="first_name" ><br><br>
-                        <h6>Last Name</h6><br>
-                        <input type="text" required name="last_name" ><br><br>
+                        <h6>Name</h6><br>
+                        <input type="text" required name="name" ><br><br>
                         <h6>Email</h6><br>
                         <input type="text" required name="email" ><br><br>
-                        <h6>Phone Number</h6><br>
-                        <input type="text" required name="phone_number" ><br><br>
-                        <h6>Salary</h6><br>
-                        <input type="text" required name="salary" ><br><br>
-                        <h6>Department ID</h6><br>
-                        <input type="number" required name="department_id" ><br><br>
-                        <h6>Job ID</h6><br>
-                        <input type="number" required name="job_id" ><br><br>
+                        <h6>Password</h6><br>
+                        <input type="text" required name="password" ><br><br>
+                        <h6>Role</h6><br>
+                        <input type="number" required name="role" ><br><br>
 
                         <input type="submit">
                     </form>
@@ -789,21 +778,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
